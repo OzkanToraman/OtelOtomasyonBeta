@@ -19,7 +19,9 @@ namespace OtelOtomasyon.WinForm.UI
     public partial class FormResepsiyon : Form
     {
         int turId, ozellikId, fiyatId, katId, odaId, modId, rezervasyonId, musteriId, personelId, tarihMod;
+        int bilgiRezerveId, kontrolBilgiRezerveId;
         IEnumerable<string> odalar;
+        Satis sorgu = new Satis();
         string sagTus;
 
         protected IUnitOfWork _uow;
@@ -172,6 +174,7 @@ namespace OtelOtomasyon.WinForm.UI
             OdaBosalt();
             DoluOdaKontrol();
             RezerveOdaKontrol();
+            BosOdaSayisiHesapla();
         }
         private void dtpCikis_ValueChanged(object sender, EventArgs e)
         {
@@ -191,23 +194,48 @@ namespace OtelOtomasyon.WinForm.UI
             {
                 tt.SetToolTip(btn, btn.Text);
             }
-            //else if (btn.Text == "REZERVE")
-            //{
-            //    int rezerveModId = dtpTarih.Value.Day % 6;
-            //    if (rezervasyonId == 0)
-            //    {
-            //        rezervasyonId = 6;
-            //    }
-            //    int bilgiRezerveId = _uow.GetRepo<Rezervasyon>()
-            //        .Where(x => x.Oda.OdaAd == btn.Name && x.Mod.Ad == rezerveModId.ToString())
-            //        .FirstOrDefault()
-            //        .Id;
-            //    var sorgu = _uow.GetRepo<Satis>()
-            //        .Where(x => x.RezervasyonId == bilgiRezerveId)
-            //        .FirstOrDefault();
-            //    tt.SetToolTip(btn, "Müşteri Adı ve Soyadı: " + (sorgu.Musteri.Ad +" "+sorgu.Musteri.Soyad));
-            //}
+            else if (btn.Text == "REZERVE" || btn.Text == "DOLU")
+            {
+                #region ToolTips
+                int rezerveModId = dtpTarih.Value.Day % 6;
+                if (rezervasyonId == 0)
+                {
+                    rezervasyonId = 6;
+                }
+
+                bilgiRezerveId = _uow.GetRepo<Rezervasyon>()
+                    .Where(x => x.Oda.OdaAd == btn.Name && x.Mod.Ad == rezerveModId.ToString())
+                    .FirstOrDefault()
+                    .Id;
+
+                bool varmi = Convert.ToBoolean(_uow.GetRepo<Satis>()
+               .Where(x => x.RezervasyonId == bilgiRezerveId)
+               .Count());
+
+                if (varmi)
+                {
+                    sorgu = _uow.GetRepo<Satis>()
+                        .Where(x => x.RezervasyonId == bilgiRezerveId)
+                        .FirstOrDefault();
+                }
+                else
+                {
+                    if (bilgiRezerveId != kontrolBilgiRezerveId && kontrolBilgiRezerveId != 0)
+                    {
+                        bilgiRezerveId = kontrolBilgiRezerveId;
+                    }
+                    kontrolBilgiRezerveId = bilgiRezerveId;
+                    sorgu = _uow.GetRepo<Satis>()
+                                  .Where(x => x.RezervasyonId == kontrolBilgiRezerveId)
+                                  .FirstOrDefault();
+                }
+
+                tt.SetToolTip(btn, "Müşteri Adı ve Soyadı: \n" + (sorgu.Musteri.Ad + " " + sorgu.Musteri.Soyad));
+                #endregion
+            }
         }
+
+
 
         private void btn1101_MouseDown(object sender, MouseEventArgs e)
         {
@@ -470,8 +498,8 @@ namespace OtelOtomasyon.WinForm.UI
         {
             Musteri m = new Musteri()
             {
-                Ad = txtAd.Text,
-                Soyad = txtSoyad.Text,
+                Ad = txtAd.Text.Substring(0, 1).ToUpper() + txtAd.Text.Substring(1).ToLower(),
+                Soyad = txtSoyad.Text.Substring(0, 1).ToUpper() + txtSoyad.Text.Substring(1).ToLower(),
                 TCNo = txtKimlikNo.Text,
                 Adres = txtAdres.Text,
                 Telefon = txtTelefon.Text,
@@ -620,7 +648,7 @@ namespace OtelOtomasyon.WinForm.UI
             int count = 0;
             foreach (Button button in this.Controls.OfType<Button>())
             {
-                if (button.BackColor == Color.Red ||button.BackColor == Color.Orange)
+                if (button.BackColor == Color.Red || button.BackColor == Color.Orange)
                 {
                     count++;
                 }
@@ -735,7 +763,7 @@ namespace OtelOtomasyon.WinForm.UI
         #region OturumAçanPersonel
         private void OturumAcanPersonel()
         {
-            personelId = 
+            personelId =
             _uow.GetRepo<Personel>()
             .Where(x => x.Login.UserName == FormLogin.kullanici)
             .FirstOrDefault()
@@ -759,7 +787,7 @@ namespace OtelOtomasyon.WinForm.UI
         {
             FormKimlikSorgulama frmKimlik = new FormKimlikSorgulama();
             frmKimlik.ShowDialog();
-            if ( FormKimlikSorgulama.ks != null)
+            if (FormKimlikSorgulama.ks != null)
             {
                 txtAd.Text = FormKimlikSorgulama.ks.Ad;
                 txtSoyad.Text = FormKimlikSorgulama.ks.Soyad;

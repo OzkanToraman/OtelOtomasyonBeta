@@ -36,8 +36,8 @@ namespace OtelOtomasyon.WinForm.UI
                 MessageBox.Show("TC Doğru ");
                 ks = new KimlikSorgulamaClass()
                 {
-                    Ad = txtAd.Text,
-                    Soyad = txtSoyad.Text,
+                    Ad = txtAd.Text.Substring(0, 1).ToUpper() + txtAd.Text.Substring(1).ToLower(),
+                    Soyad = txtSoyad.Text.Substring(0, 1).ToUpper() + txtSoyad.Text.Substring(1).ToLower(),
                     KimlikNo = txtKimlikNo.Text
                 };
                 this.Close();

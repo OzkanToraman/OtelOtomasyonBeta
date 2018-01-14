@@ -195,6 +195,8 @@
             this.rbNoSmoking = new System.Windows.Forms.RadioButton();
             this.rbSmoking = new System.Windows.Forms.RadioButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblOturum = new System.Windows.Forms.Label();
+            this.lblMusteri = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lblBosOda = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
@@ -209,8 +211,6 @@
             this.btnCikis = new System.Windows.Forms.Button();
             this.btnRezervasyon = new System.Windows.Forms.Button();
             this.lbRezervasyonlar = new System.Windows.Forms.ListBox();
-            this.lblMusteri = new System.Windows.Forms.Label();
-            this.lblOturum = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -2332,6 +2332,30 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Genel Bilgiler";
             // 
+            // lblOturum
+            // 
+            this.lblOturum.AutoSize = true;
+            this.lblOturum.BackColor = System.Drawing.Color.Transparent;
+            this.lblOturum.Font = new System.Drawing.Font("Arial", 10F);
+            this.lblOturum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblOturum.Location = new System.Drawing.Point(83, 26);
+            this.lblOturum.Name = "lblOturum";
+            this.lblOturum.Size = new System.Drawing.Size(37, 16);
+            this.lblOturum.TabIndex = 10;
+            this.lblOturum.Text = "ozkn";
+            // 
+            // lblMusteri
+            // 
+            this.lblMusteri.AutoSize = true;
+            this.lblMusteri.BackColor = System.Drawing.Color.Transparent;
+            this.lblMusteri.Font = new System.Drawing.Font("Arial", 10F);
+            this.lblMusteri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblMusteri.Location = new System.Drawing.Point(124, 51);
+            this.lblMusteri.Name = "lblMusteri";
+            this.lblMusteri.Size = new System.Drawing.Size(24, 16);
+            this.lblMusteri.TabIndex = 10;
+            this.lblMusteri.Text = "32";
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -2473,6 +2497,7 @@
             this.btnCikis.Size = new System.Drawing.Size(79, 39);
             this.btnCikis.TabIndex = 173;
             this.btnCikis.Text = "KAPAT";
+            this.toolTip1.SetToolTip(this.btnCikis, "Formu kapatmak için tıklayınız");
             this.btnCikis.UseVisualStyleBackColor = false;
             this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
             // 
@@ -2498,30 +2523,6 @@
             this.lbRezervasyonlar.Name = "lbRezervasyonlar";
             this.lbRezervasyonlar.Size = new System.Drawing.Size(232, 169);
             this.lbRezervasyonlar.TabIndex = 175;
-            // 
-            // lblMusteri
-            // 
-            this.lblMusteri.AutoSize = true;
-            this.lblMusteri.BackColor = System.Drawing.Color.Transparent;
-            this.lblMusteri.Font = new System.Drawing.Font("Arial", 10F);
-            this.lblMusteri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblMusteri.Location = new System.Drawing.Point(124, 51);
-            this.lblMusteri.Name = "lblMusteri";
-            this.lblMusteri.Size = new System.Drawing.Size(24, 16);
-            this.lblMusteri.TabIndex = 10;
-            this.lblMusteri.Text = "32";
-            // 
-            // lblOturum
-            // 
-            this.lblOturum.AutoSize = true;
-            this.lblOturum.BackColor = System.Drawing.Color.Transparent;
-            this.lblOturum.Font = new System.Drawing.Font("Arial", 10F);
-            this.lblOturum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblOturum.Location = new System.Drawing.Point(83, 26);
-            this.lblOturum.Name = "lblOturum";
-            this.lblOturum.Size = new System.Drawing.Size(37, 16);
-            this.lblOturum.TabIndex = 10;
-            this.lblOturum.Text = "ozkn";
             // 
             // label15
             // 
