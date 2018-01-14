@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtelOtomasyon.Core", "OtelOtomasyon.Core\OtelOtomasyon.Core.csproj", "{9E5E7CDA-F6DC-4380-9819-07BFE0A3B1E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtelOtomasyon.DAL", "OtelOtomasyon.DAL\OtelOtomasyon.DAL.csproj", "{840CE27E-8AE0-4806-AFD0-60BC0325A8BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtelOtomassyon.BLL", "OtelOtomassyon.BLL\OtelOtomassyon.BLL.csproj", "{D73C059D-8953-4020-B830-9F35D7D77F4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtelOtomasyon.Repository", "OtelOtomasyon.Repository\OtelOtomasyon.Repository.csproj", "{A0F4E085-6D95-446B-A926-26CD8984BD54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtelOtomasyon.WinForm.UI", "OtelOtomasyon.WinForm.UI\OtelOtomasyon.WinForm.UI.csproj", "{965822B9-0006-488B-9189-0B92B7BBF8C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E5E7CDA-F6DC-4380-9819-07BFE0A3B1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E5E7CDA-F6DC-4380-9819-07BFE0A3B1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E5E7CDA-F6DC-4380-9819-07BFE0A3B1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E5E7CDA-F6DC-4380-9819-07BFE0A3B1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{840CE27E-8AE0-4806-AFD0-60BC0325A8BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840CE27E-8AE0-4806-AFD0-60BC0325A8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840CE27E-8AE0-4806-AFD0-60BC0325A8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840CE27E-8AE0-4806-AFD0-60BC0325A8BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D73C059D-8953-4020-B830-9F35D7D77F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D73C059D-8953-4020-B830-9F35D7D77F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D73C059D-8953-4020-B830-9F35D7D77F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D73C059D-8953-4020-B830-9F35D7D77F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0F4E085-6D95-446B-A926-26CD8984BD54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0F4E085-6D95-446B-A926-26CD8984BD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0F4E085-6D95-446B-A926-26CD8984BD54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F4E085-6D95-446B-A926-26CD8984BD54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{965822B9-0006-488B-9189-0B92B7BBF8C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{965822B9-0006-488B-9189-0B92B7BBF8C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{965822B9-0006-488B-9189-0B92B7BBF8C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{965822B9-0006-488B-9189-0B92B7BBF8C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
