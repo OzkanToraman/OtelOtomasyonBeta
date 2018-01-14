@@ -8,3 +8,13 @@ C:\Users\ozkn\Desktop\backup_project\OtelOtomasyon\OtelOtomasyon\OtelOtomasyon.D
 C:\Users\ozkn\Desktop\backup_project\OtelOtomasyon\OtelOtomasyon\OtelOtomasyon.DAL\obj\Debug\OtelOtomasyon.DAL.csprojResolveAssemblyReference.cache
 C:\Users\ozkn\Desktop\backup_project\OtelOtomasyon\OtelOtomasyon\OtelOtomasyon.DAL\obj\Debug\OtelOtomasyon.DAL.dll
 C:\Users\ozkn\Desktop\backup_project\OtelOtomasyon\OtelOtomasyon\OtelOtomasyon.DAL\obj\Debug\OtelOtomasyon.DAL.pdb
+C:\Users\ozkn\Source\Repos\OtelOtomasyonBeta\OtelOtomasyon\OtelOtomasyon.DAL\bin\Debug\OtelOtomasyon.DAL.dll.config
+C:\Users\ozkn\Source\Repos\OtelOtomasyonBeta\OtelOtomasyon\OtelOtomasyon.DAL\bin\Debug\OtelOtomasyon.DAL.dll
+C:\Users\ozkn\Source\Repos\OtelOtomasyonBeta\OtelOtomasyon\OtelOtomasyon.DAL\bin\Debug\OtelOtomasyon.DAL.pdb
+C:\Users\ozkn\Source\Repos\OtelOtomasyonBeta\OtelOtomasyon\OtelOtomasyon.DAL\bin\Debug\EntityFramework.dll
+C:\Users\ozkn\Source\Repos\OtelOtomasyonBeta\OtelOtomasyon\OtelOtomasyon.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ozkn\Source\Repos\OtelOtomasyonBeta\OtelOtomasyon\OtelOtomasyon.DAL\bin\Debug\EntityFramework.xml
+C:\Users\ozkn\Source\Repos\OtelOtomasyonBeta\OtelOtomasyon\OtelOtomasyon.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ozkn\Source\Repos\OtelOtomasyonBeta\OtelOtomasyon\OtelOtomasyon.DAL\obj\Debug\OtelOtomasyon.DAL.csprojResolveAssemblyReference.cache
+C:\Users\ozkn\Source\Repos\OtelOtomasyonBeta\OtelOtomasyon\OtelOtomasyon.DAL\obj\Debug\OtelOtomasyon.DAL.dll
+C:\Users\ozkn\Source\Repos\OtelOtomasyonBeta\OtelOtomasyon\OtelOtomasyon.DAL\obj\Debug\OtelOtomasyon.DAL.pdb

@@ -2078,6 +2078,7 @@
             // 
             // cbKat
             // 
+            this.cbKat.Enabled = false;
             this.cbKat.Font = new System.Drawing.Font("Arial", 10F);
             this.cbKat.FormattingEnabled = true;
             this.cbKat.Location = new System.Drawing.Point(203, 580);
@@ -2331,7 +2332,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(24, 16);
             this.label17.TabIndex = 10;
-            this.label17.Text = "36";
+            this.label17.Text = "32";
             // 
             // lblBosOda
             // 
@@ -2343,7 +2344,7 @@
             this.lblBosOda.Name = "lblBosOda";
             this.lblBosOda.Size = new System.Drawing.Size(24, 16);
             this.lblBosOda.TabIndex = 10;
-            this.lblBosOda.Text = "36";
+            this.lblBosOda.Text = "32";
             // 
             // label82
             // 

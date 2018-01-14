@@ -169,9 +169,6 @@
     <None Include="Resources\password.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\button_giris.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\backgroundpattern.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +221,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\backgroundpattern-min.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_giris1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_kapat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

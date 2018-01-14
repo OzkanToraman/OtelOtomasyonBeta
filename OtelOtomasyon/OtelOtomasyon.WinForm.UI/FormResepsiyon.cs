@@ -64,10 +64,11 @@ namespace OtelOtomasyon.WinForm.UI
             KatDoldur();
             CinsiyetDoldur();
             MedeniHalDoldur();
+            OdaBosalt();
             DoluOdaKontrol();
+            RezerveOdaKontrol();
             BosalacakOdaKontrol();
             BosOdaSayisiHesapla();
-            RezerveOdaKontrol();
             BosalacakRezerveKontrol();
             OturumAcanPersonel();
         }
@@ -168,6 +169,7 @@ namespace OtelOtomasyon.WinForm.UI
             {
                 tarihMod = 6;
             }
+            OdaBosalt();
             DoluOdaKontrol();
             RezerveOdaKontrol();
         }
@@ -296,6 +298,7 @@ namespace OtelOtomasyon.WinForm.UI
                 }
                 OdaBosalt();
                 RezerveOdaKontrol();
+                DoluOdaKontrol();
                 BosOdaSayisiHesapla();
             }
             else
@@ -357,8 +360,8 @@ namespace OtelOtomasyon.WinForm.UI
                         MessageBox.Show("Rezervasyon başarıyla iptal edilmiştir.");
                     }
                 }
-                OdaBosalt();
                 DoluOdaKontrol();
+                RezerveOdaKontrol();
                 BosOdaSayisiHesapla();
             }
             else
@@ -423,6 +426,7 @@ namespace OtelOtomasyon.WinForm.UI
                     else
                     {
                         OdaBosalt();
+                        Temizle();
                     }
                 }
             }
@@ -430,6 +434,7 @@ namespace OtelOtomasyon.WinForm.UI
             {
                 MessageBox.Show("Bir oda seçiniz");
             }
+
         }
 
 
@@ -541,6 +546,7 @@ namespace OtelOtomasyon.WinForm.UI
                 MusteriId = musteriId,
                 SatildiMi = true,
                 RezervasyonId = rezervasyonId,
+                Fiyat = Convert.ToDecimal(txtFiyat.Text.Substring(0, 3))
             };
             _uow.GetRepo<Satis>().Add(s);
             if (_uow.Commit() > 0)
@@ -557,8 +563,6 @@ namespace OtelOtomasyon.WinForm.UI
         #region DoluOdaKontrol
         private void DoluOdaKontrol()
         {
-            OdaBosalt();
-
             IEnumerable<string> doluOdalar = new List<string>();
             doluOdalar = _uow.GetRepo<Rezervasyon>()
                 .Where(x => x.Mod.Id == tarihMod && x.DoluMu == true)
@@ -593,7 +597,6 @@ namespace OtelOtomasyon.WinForm.UI
 
 
         #endregion
-
         #region OdaBosalt
         private void OdaBosalt()
         {
@@ -617,12 +620,12 @@ namespace OtelOtomasyon.WinForm.UI
             int count = 0;
             foreach (Button button in this.Controls.OfType<Button>())
             {
-                if (button.BackColor == Color.Red)
+                if (button.BackColor == Color.Red ||button.BackColor == Color.Orange)
                 {
                     count++;
                 }
             }
-            int toplamOdaSayisi = 36 - count;
+            int toplamOdaSayisi = 32 - count;
             lblBosOda.Text = toplamOdaSayisi.ToString();
         }
         #endregion
@@ -641,7 +644,6 @@ namespace OtelOtomasyon.WinForm.UI
         #region RezerveOdaKontrol
         private void RezerveOdaKontrol()
         {
-            OdaBosalt();
             IEnumerable<string> rezerveliOdalar = new List<string>();
             rezerveliOdalar = _uow.GetRepo<Rezervasyon>()
                 .Where(x => x.Mod.Id == tarihMod && x.RezerveMi == true)

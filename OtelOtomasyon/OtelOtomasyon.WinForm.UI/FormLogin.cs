@@ -69,5 +69,10 @@ namespace OtelOtomasyon.WinForm.UI
         {
             Application.Exit();
         }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

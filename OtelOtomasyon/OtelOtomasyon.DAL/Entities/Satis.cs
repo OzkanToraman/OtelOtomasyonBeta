@@ -14,6 +14,8 @@ namespace OtelOtomasyon.DAL
 
         public bool SatildiMi { get; set; }
 
+        public decimal Fiyat { get; set; }
+
         public int Id { get; set; }
 
         public int MusteriId { get; set; }

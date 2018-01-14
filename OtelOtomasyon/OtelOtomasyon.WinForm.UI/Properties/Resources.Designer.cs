@@ -93,9 +93,19 @@ namespace OtelOtomasyon.WinForm.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_giris {
+        internal static System.Drawing.Bitmap button_giris1 {
             get {
-                object obj = ResourceManager.GetObject("button_giris", resourceCulture);
+                object obj = ResourceManager.GetObject("button_giris1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_kapat {
+            get {
+                object obj = ResourceManager.GetObject("button_kapat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
