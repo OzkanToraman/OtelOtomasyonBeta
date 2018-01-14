@@ -209,6 +209,14 @@
             this.btnCikis = new System.Windows.Forms.Button();
             this.btnRezervasyon = new System.Windows.Forms.Button();
             this.lbRezervasyonlar = new System.Windows.Forms.ListBox();
+            this.lblMusteri = new System.Windows.Forms.Label();
+            this.lblOturum = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbKimlikDogrula)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -2307,6 +2315,8 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox5.Controls.Add(this.lblOturum);
+            this.groupBox5.Controls.Add(this.lblMusteri);
             this.groupBox5.Controls.Add(this.label17);
             this.groupBox5.Controls.Add(this.lblBosOda);
             this.groupBox5.Controls.Add(this.label82);
@@ -2489,6 +2499,102 @@
             this.lbRezervasyonlar.Size = new System.Drawing.Size(232, 169);
             this.lbRezervasyonlar.TabIndex = 175;
             // 
+            // lblMusteri
+            // 
+            this.lblMusteri.AutoSize = true;
+            this.lblMusteri.BackColor = System.Drawing.Color.Transparent;
+            this.lblMusteri.Font = new System.Drawing.Font("Arial", 10F);
+            this.lblMusteri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblMusteri.Location = new System.Drawing.Point(124, 51);
+            this.lblMusteri.Name = "lblMusteri";
+            this.lblMusteri.Size = new System.Drawing.Size(24, 16);
+            this.lblMusteri.TabIndex = 10;
+            this.lblMusteri.Text = "32";
+            // 
+            // lblOturum
+            // 
+            this.lblOturum.AutoSize = true;
+            this.lblOturum.BackColor = System.Drawing.Color.Transparent;
+            this.lblOturum.Font = new System.Drawing.Font("Arial", 10F);
+            this.lblOturum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblOturum.Location = new System.Drawing.Point(83, 26);
+            this.lblOturum.Name = "lblOturum";
+            this.lblOturum.Size = new System.Drawing.Size(37, 16);
+            this.lblOturum.TabIndex = 10;
+            this.lblOturum.Text = "ozkn";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Arial", 10F);
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(468, 533);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(13, 16);
+            this.label15.TabIndex = 176;
+            this.label15.Text = "*";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Arial", 10F);
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.Location = new System.Drawing.Point(468, 555);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(13, 16);
+            this.label21.TabIndex = 177;
+            this.label21.Text = "*";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Arial", 10F);
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.Location = new System.Drawing.Point(468, 575);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(13, 16);
+            this.label22.TabIndex = 176;
+            this.label22.Text = "*";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Arial", 10F);
+            this.label24.ForeColor = System.Drawing.Color.Red;
+            this.label24.Location = new System.Drawing.Point(468, 597);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(13, 16);
+            this.label24.TabIndex = 177;
+            this.label24.Text = "*";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Arial", 10F);
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(468, 618);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(13, 16);
+            this.label25.TabIndex = 176;
+            this.label25.Text = "*";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Arial", 10F);
+            this.label33.ForeColor = System.Drawing.Color.Red;
+            this.label33.Location = new System.Drawing.Point(469, 683);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(13, 16);
+            this.label33.TabIndex = 177;
+            this.label33.Text = "*";
+            // 
             // FormResepsiyon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -2498,6 +2604,20 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 761);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.label79);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label74);
+            this.Controls.Add(this.label73);
+            this.Controls.Add(this.label72);
+            this.Controls.Add(this.label80);
+            this.Controls.Add(this.label69);
+            this.Controls.Add(this.label71);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.lbRezervasyonlar);
             this.Controls.Add(this.btnRezervasyon);
             this.Controls.Add(this.btnCikis);
@@ -2507,7 +2627,6 @@
             this.Controls.Add(this.btnGetir);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDogum);
             this.Controls.Add(this.dtpDogum);
             this.Controls.Add(this.txtOdaBilgisi);
@@ -2526,7 +2645,6 @@
             this.Controls.Add(this.txtAdres);
             this.Controls.Add(this.cbOdaTur);
             this.Controls.Add(this.label67);
-            this.Controls.Add(this.label79);
             this.Controls.Add(this.cbOpsiyon);
             this.Controls.Add(this.label70);
             this.Controls.Add(this.label75);
@@ -2538,14 +2656,8 @@
             this.Controls.Add(this.cbKat);
             this.Controls.Add(this.cbCinsiyet);
             this.Controls.Add(this.txtKat);
-            this.Controls.Add(this.label74);
             this.Controls.Add(this.txtSoyad);
-            this.Controls.Add(this.label73);
             this.Controls.Add(this.txtKimlikNo);
-            this.Controls.Add(this.label72);
-            this.Controls.Add(this.label80);
-            this.Controls.Add(this.label69);
-            this.Controls.Add(this.label71);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.label11);
@@ -2902,5 +3014,13 @@
         private System.Windows.Forms.Button btnRezervasyon;
         private System.Windows.Forms.ListBox lbRezervasyonlar;
         private System.Windows.Forms.ToolStripMenuItem odaİptalEtToolStripMenuItem;
+        private System.Windows.Forms.Label lblOturum;
+        private System.Windows.Forms.Label lblMusteri;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label33;
     }
 }

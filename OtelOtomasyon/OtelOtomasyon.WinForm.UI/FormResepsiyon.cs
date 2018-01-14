@@ -626,6 +626,8 @@ namespace OtelOtomasyon.WinForm.UI
                 }
             }
             int toplamOdaSayisi = 32 - count;
+            lblOturum.Text = FormLogin.kullanici;
+            lblMusteri.Text = count.ToString();
             lblBosOda.Text = toplamOdaSayisi.ToString();
         }
         #endregion
