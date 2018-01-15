@@ -24,6 +24,7 @@ namespace OtelOtomasyon.WinForm.UI
         int kacGun;
         IEnumerable<string> odalar;
         Satis sorgu = new Satis();
+        Musteri musteriSorgu = new Musteri();
         string sagTus;
 
         protected IUnitOfWork _uow;
@@ -216,6 +217,7 @@ namespace OtelOtomasyon.WinForm.UI
                         sorgu = _uow.GetRepo<Satis>()
                             .WhereByQuery(x => x.RezervasyonId == bilgiRezerveId)
                             .FirstOrDefault();
+                        musteriSorgu = _uow.GetRepo<Musteri>().GetById(sorgu.MusteriId);
                     }
                     else
                     {
@@ -227,9 +229,10 @@ namespace OtelOtomasyon.WinForm.UI
                         sorgu = _uow.GetRepo<Satis>()
                                       .WhereByQuery(x => x.RezervasyonId == kontrolBilgiRezerveId)
                                       .FirstOrDefault();
+                        musteriSorgu = _uow.GetRepo<Musteri>().GetById(sorgu.MusteriId);
                     }
 
-                    tt.SetToolTip(btn, "Müşteri Adı ve Soyadı: \n" + (sorgu.Musteri.Ad + " " + sorgu.Musteri.Soyad));
+                    tt.SetToolTip(btn, "Müşteri Adı ve Soyadı: \n" + (musteriSorgu.Ad + " " + musteriSorgu.Soyad));
                 }
                 #endregion
             }
