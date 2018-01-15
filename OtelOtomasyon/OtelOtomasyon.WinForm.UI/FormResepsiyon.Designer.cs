@@ -34,6 +34,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pbKimlikDogrula = new System.Windows.Forms.PictureBox();
+            this.btnCikis = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.seçToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seçimiBırakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -208,7 +209,6 @@
             this.btnGetir = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.txtFiyat = new System.Windows.Forms.TextBox();
-            this.btnCikis = new System.Windows.Forms.Button();
             this.btnRezervasyon = new System.Windows.Forms.Button();
             this.lbRezervasyonlar = new System.Windows.Forms.ListBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -318,6 +318,23 @@
             this.pbKimlikDogrula.TabStop = false;
             this.toolTip1.SetToolTip(this.pbKimlikDogrula, "Kimlik Sorgulama\r\n");
             this.pbKimlikDogrula.Click += new System.EventHandler(this.pbKimlikDogrula_Click);
+            // 
+            // btnCikis
+            // 
+            this.btnCikis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCikis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCikis.FlatAppearance.BorderSize = 0;
+            this.btnCikis.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCikis.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCikis.ForeColor = System.Drawing.Color.White;
+            this.btnCikis.Location = new System.Drawing.Point(1143, 34);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.Size = new System.Drawing.Size(79, 39);
+            this.btnCikis.TabIndex = 173;
+            this.btnCikis.Text = "KAPAT";
+            this.toolTip1.SetToolTip(this.btnCikis, "Formu kapatmak için tıklayınız");
+            this.btnCikis.UseVisualStyleBackColor = false;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
             // 
             // contextMenuStrip1
             // 
@@ -2484,23 +2501,6 @@
             this.txtFiyat.Size = new System.Drawing.Size(197, 23);
             this.txtFiyat.TabIndex = 172;
             // 
-            // btnCikis
-            // 
-            this.btnCikis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCikis.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCikis.FlatAppearance.BorderSize = 0;
-            this.btnCikis.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCikis.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCikis.ForeColor = System.Drawing.Color.White;
-            this.btnCikis.Location = new System.Drawing.Point(1143, 34);
-            this.btnCikis.Name = "btnCikis";
-            this.btnCikis.Size = new System.Drawing.Size(79, 39);
-            this.btnCikis.TabIndex = 173;
-            this.btnCikis.Text = "KAPAT";
-            this.toolTip1.SetToolTip(this.btnCikis, "Formu kapatmak için tıklayınız");
-            this.btnCikis.UseVisualStyleBackColor = false;
-            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
-            // 
             // btnRezervasyon
             // 
             this.btnRezervasyon.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -2604,7 +2604,6 @@
             this.BackgroundImage = global::OtelOtomasyon.WinForm.UI.Properties.Resources.backgroundpattern_min;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 761);
-            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.label79);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label74);

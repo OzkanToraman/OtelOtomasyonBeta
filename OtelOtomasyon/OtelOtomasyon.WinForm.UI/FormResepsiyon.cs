@@ -20,6 +20,7 @@ namespace OtelOtomasyon.WinForm.UI
     {
         int turId, ozellikId, fiyatId, katId, odaId, modId, rezervasyonId, musteriId, personelId, tarihMod;
         int bilgiRezerveId, kontrolBilgiRezerveId;
+        string ad, soyad;
         int kacGun;
         IEnumerable<string> odalar;
         Satis sorgu = new Satis();
@@ -194,39 +195,42 @@ namespace OtelOtomasyon.WinForm.UI
             {
                 #region ToolTips
                 int rezerveModId = dtpTarih.Value.Day % 6;
-                if (rezervasyonId == 0)
+                if (rezerveModId == 0)
                 {
-                    rezervasyonId = 6;
+                    rezerveModId = 6;
                 }
-
-                bilgiRezerveId = _uow.GetRepo<Rezervasyon>()
-                    .WhereByQuery(x => x.Oda.OdaAd == btn.Name && x.Mod.Ad == rezerveModId.ToString())
-                    .FirstOrDefault()
-                    .Id;
-
-                bool varmi = Convert.ToBoolean(_uow.GetRepo<Satis>()
-               .WhereByQuery(x => x.RezervasyonId == bilgiRezerveId)
-               .Count());
-
-                if (varmi)
+                if (dtpTarih.Value.Date == DateTime.Today.Date)
                 {
-                    sorgu = _uow.GetRepo<Satis>()
-                        .WhereByQuery(x => x.RezervasyonId == bilgiRezerveId)
-                        .FirstOrDefault();
-                }
-                else
-                {
-                    if (bilgiRezerveId != kontrolBilgiRezerveId && kontrolBilgiRezerveId != 0)
+                    bilgiRezerveId = _uow.GetRepo<Rezervasyon>()
+                        .WhereByQuery(x => x.Oda.OdaAd == btn.Name && x.Mod.Ad == rezerveModId.ToString())
+                        .FirstOrDefault()
+                        .Id;
+
+                    bool varmi = Convert.ToBoolean(_uow.GetRepo<Satis>()
+                   .WhereByQuery(x => x.RezervasyonId == bilgiRezerveId)
+                   .Count());
+
+                    if (varmi)
                     {
-                        bilgiRezerveId = kontrolBilgiRezerveId;
+                        kontrolBilgiRezerveId = bilgiRezerveId;
+                        sorgu = _uow.GetRepo<Satis>()
+                            .WhereByQuery(x => x.RezervasyonId == bilgiRezerveId)
+                            .FirstOrDefault();
                     }
-                    kontrolBilgiRezerveId = bilgiRezerveId;
-                    sorgu = _uow.GetRepo<Satis>()
-                                  .WhereByQuery(x => x.RezervasyonId == kontrolBilgiRezerveId)
-                                  .FirstOrDefault();
-                }
+                    else
+                    {
+                        if (bilgiRezerveId != kontrolBilgiRezerveId && kontrolBilgiRezerveId != 0)
+                        {
+                            bilgiRezerveId = kontrolBilgiRezerveId;
+                        }
+                        kontrolBilgiRezerveId = bilgiRezerveId;
+                        sorgu = _uow.GetRepo<Satis>()
+                                      .WhereByQuery(x => x.RezervasyonId == kontrolBilgiRezerveId)
+                                      .FirstOrDefault();
+                    }
 
-                tt.SetToolTip(btn, "Müşteri Adı ve Soyadı: \n" + (sorgu.Musteri.Ad + " " + sorgu.Musteri.Soyad));
+                    tt.SetToolTip(btn, "Müşteri Adı ve Soyadı: \n" + (sorgu.Musteri.Ad + " " + sorgu.Musteri.Soyad));
+                }
                 #endregion
             }
         }
@@ -398,7 +402,7 @@ namespace OtelOtomasyon.WinForm.UI
 
         private void FormLoadItems()
         {
-            
+
             OdaTurDoldur();
             OdaOpsiyonDoldur();
             KatDoldur();
@@ -412,10 +416,10 @@ namespace OtelOtomasyon.WinForm.UI
             BosalacakRezerveKontrol();
             OturumAcanPersonel();
 
-            
+
         }
 
-        
+
 
         private void btnGetir_Click(object sender, EventArgs e)
         {
@@ -467,6 +471,7 @@ namespace OtelOtomasyon.WinForm.UI
                     {
                         DoluOdaKontrol();
                         BosOdaSayisiHesapla();
+                        Temizle();
                     }
                     else
                     {
@@ -495,10 +500,12 @@ namespace OtelOtomasyon.WinForm.UI
                     {
                         RezerveOdaKontrol();
                         BosOdaSayisiHesapla();
+                        Temizle();
                     }
                     else
                     {
                         OdaBosalt();
+                        Temizle();
                     }
                 }
             }
@@ -513,10 +520,20 @@ namespace OtelOtomasyon.WinForm.UI
         #region OKButtonControls
         private bool MusteriBilgiAlaniKontrol()
         {
+            if (!string.IsNullOrEmpty(txtAd.Text)&&!string.IsNullOrEmpty(txtSoyad.Text))
+            {
+                ad = txtAd.Text.Substring(0, 1).ToUpper() + txtAd.Text.Substring(1).ToLower();
+                soyad = txtSoyad.Text.Substring(0, 1).ToUpper() + txtSoyad.Text.Substring(1).ToLower();
+            }
+            else
+            {
+                ad = txtAd.Text;
+                soyad = txtSoyad.Text;
+            }
             Musteri m = new Musteri()
             {
-                Ad = txtAd.Text.Substring(0, 1).ToUpper() + txtAd.Text.Substring(1).ToLower(),
-                Soyad = txtSoyad.Text.Substring(0, 1).ToUpper() + txtSoyad.Text.Substring(1).ToLower(),
+                Ad = ad,
+                Soyad = soyad,
                 TCNo = txtKimlikNo.Text,
                 Adres = txtAdres.Text,
                 Telefon = txtTelefon.Text,
@@ -555,7 +572,7 @@ namespace OtelOtomasyon.WinForm.UI
                 .Where(x => x.OdaAd == odaAd)
                 .FirstOrDefault()
                 .Id;
-            for (int i = dtpGiris.Value.Day; i <= dtpCikis.Value.Day; i++)
+            for (int i = dtpCikis.Value.Day; i >= dtpGiris.Value.Day; i--)
             {
                 int tarihModAyar = i % 6;
                 if (tarihModAyar == 0)
