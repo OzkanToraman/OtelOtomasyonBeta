@@ -34,6 +34,7 @@
             this.btnGiris = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblBildirim = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -116,6 +117,16 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // lblBildirim
+            // 
+            this.lblBildirim.AutoSize = true;
+            this.lblBildirim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblBildirim.Location = new System.Drawing.Point(169, 451);
+            this.lblBildirim.Name = "lblBildirim";
+            this.lblBildirim.Size = new System.Drawing.Size(0, 16);
+            this.lblBildirim.TabIndex = 8;
+            this.lblBildirim.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -124,6 +135,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(544, 476);
             this.ControlBox = false;
+            this.Controls.Add(this.lblBildirim);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnKapat);
@@ -153,6 +165,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnGiris;
         private System.Windows.Forms.Button btnKapat;
+        private System.Windows.Forms.Label lblBildirim;
     }
 }
 

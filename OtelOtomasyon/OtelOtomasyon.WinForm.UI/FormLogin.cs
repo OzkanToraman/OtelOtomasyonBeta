@@ -30,7 +30,7 @@ namespace OtelOtomasyon.WinForm.UI
             InitializeComponent();
         }
 
-        private void btnGiris_Click(object sender, EventArgs e)
+        private async void btnGiris_Click(object sender, EventArgs e)
         {
             Login l = new Login()
             {
@@ -46,9 +46,13 @@ namespace OtelOtomasyon.WinForm.UI
             else
             {
                 Login login = new Login();
-                login = _uow.GetRepo<Login>().Where(x => x.UserName == txtUser.Text && x.Password == txtPassword.Text).FirstOrDefault();
+                Task<Login> task = new Task<Login>(LoginKontrol);
+                task.Start();
+                lblBildirim.Text = "Kontrol ediliyor,lütfen bekleyiniz...";
+                login = await task;
                 if (login == null)
                 {
+                    lblBildirim.Text = "";
                     MessageBox.Show("Hatalı Kullanıcı Adı ya da Şifre!", "HATA");
                     txtUser.Focus();
                     txtUser.SelectAll();
@@ -73,6 +77,11 @@ namespace OtelOtomasyon.WinForm.UI
         private void btnKapat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private Login LoginKontrol()
+        {
+           return _uow.GetRepo<Login>().Where(x => x.UserName == txtUser.Text && x.Password == txtPassword.Text).FirstOrDefault();
         }
     }
 }
