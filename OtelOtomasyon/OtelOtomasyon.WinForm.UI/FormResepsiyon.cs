@@ -290,7 +290,7 @@ namespace OtelOtomasyon.WinForm.UI
                         }
                     }
                     cbKat.Text = sagTus.Substring(3, 1);
-                    if (bt.BackColor != Color.Red && bt.BackColor != Color.Orange)
+                    if (bt.BackColor != Color.Red && bt.BackColor != Color.Orange && bt.BackColor != Color.Silver)
                     {
                         txtOdaNo.Text = sagTus.Substring(3, 4);
                     }
@@ -745,7 +745,7 @@ namespace OtelOtomasyon.WinForm.UI
                 .Where(x => x.OdaAd == odaAd)
                 .FirstOrDefault()
                 .Id;
-            for (int i = dtpGiris.Value.Day; i <= dtpCikis.Value.Day; i++)
+            for (int i = dtpCikis.Value.Day; i >= dtpGiris.Value.Day; i--)
             {
                 int rezerveMod = i % 6;
                 if (rezerveMod == 0)
