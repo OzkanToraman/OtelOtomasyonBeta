@@ -72,6 +72,23 @@ namespace OtelOtomasyon.WinForm.UI
 
         }
 
+        private void FormLoadItems()
+        {
+            OdaTurDoldur();
+            OdaOpsiyonDoldur();
+            KatDoldur();
+            CinsiyetDoldur();
+            MedeniHalDoldur();
+            OdaBosalt();
+            DoluOdaKontrol();
+            RezerveOdaKontrol();
+            BosalacakOdaKontrol();
+            BosOdaSayisiHesapla();
+            BosalacakRezerveKontrol();
+            OturumAcanPersonel();
+
+        }
+
 
         #region ComboboxFill
         private void OdaTurDoldur()
@@ -401,28 +418,7 @@ namespace OtelOtomasyon.WinForm.UI
             }
         }
         #endregion
-
-
-        private void FormLoadItems()
-        {
-
-            OdaTurDoldur();
-            OdaOpsiyonDoldur();
-            KatDoldur();
-            CinsiyetDoldur();
-            MedeniHalDoldur();
-            OdaBosalt();
-            DoluOdaKontrol();
-            RezerveOdaKontrol();
-            BosalacakOdaKontrol();
-            BosOdaSayisiHesapla();
-            BosalacakRezerveKontrol();
-            OturumAcanPersonel();
-
-
-        }
-
-
+ 
 
         private void btnGetir_Click(object sender, EventArgs e)
         {
@@ -523,7 +519,7 @@ namespace OtelOtomasyon.WinForm.UI
         #region OKButtonControls
         private bool MusteriBilgiAlaniKontrol()
         {
-            if (!string.IsNullOrEmpty(txtAd.Text)&&!string.IsNullOrEmpty(txtSoyad.Text))
+            if (!string.IsNullOrEmpty(txtAd.Text) && !string.IsNullOrEmpty(txtSoyad.Text))
             {
                 ad = txtAd.Text.Substring(0, 1).ToUpper() + txtAd.Text.Substring(1).ToLower();
                 soyad = txtSoyad.Text.Substring(0, 1).ToUpper() + txtSoyad.Text.Substring(1).ToLower();
@@ -752,9 +748,9 @@ namespace OtelOtomasyon.WinForm.UI
             for (int i = dtpGiris.Value.Day; i <= dtpCikis.Value.Day; i++)
             {
                 int rezerveMod = i % 6;
-                if (i == 0)
+                if (rezerveMod == 0)
                 {
-                    i = 6;
+                    rezerveMod = 6;
                 }
                 modId = _uow.GetRepo<Mod>()
                 .Where(x => x.Ad == rezerveMod.ToString())
